@@ -82,7 +82,11 @@ function newGame() {
     
     document.getElementById('name-0').textContent = 'Player 1';
     document.getElementById('name-1').textContent = 'Player 2';
-    document.querySelector('.player-' + activePlayer).classList.remove('player-winner');
-    document.querySelector('.player-' + activePlayer).classList.add('player-active');
+
+    document.querySelector('.player-0').classList.remove('player-winner');
+    document.querySelector('.player-1').classList.remove('player-winner');
+    document.querySelector('.player-0').classList.remove('player-winner');
+    document.querySelector('.player-1').classList.remove('player-active');
+    document.querySelector('.player-0').classList.add('player-active');
     
 }
