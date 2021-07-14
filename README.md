@@ -1,2 +1,2 @@
 # Dice-Game
-<a>https://dicesgame.netlify.app/</a>
+<a target="_blank">https://dicesgame.netlify.app/</a>
