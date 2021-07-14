@@ -32,6 +32,7 @@ function nextPlayer(){
 
         document.querySelector('.player-0').classList.toggle('player-active');
         document.querySelector('.player-1').classList.toggle('player-active');
+
 };
 
 // HOLD DICE
@@ -46,9 +47,10 @@ document.querySelector('.btn-hold').addEventListener('click',function(){
     //Score Check If 100 Player Win
     if(scores[activePlayer] >= 20){
         document.querySelector('#name-' + activePlayer).textContent = 'WINNER'
-        document.querySelector('.player-' + activePlayer).classList.remove('player-active');
         document.querySelector('.player-' + activePlayer).classList.add('player-winner');
+        document.querySelector('.player-' + activePlayer).classList.remove('player-active');
         roundScore = 0;
+        document.querySelector('.dice').style.display = 'none';
         document.querySelector('.btn-roll').disabled = true;
         document.querySelector('.btn-hold').disabled = true;
     }
@@ -56,14 +58,10 @@ document.querySelector('.btn-hold').addEventListener('click',function(){
         nextPlayer();
     }
 
-})
+});
 
 // NEW GAME
-document.querySelector('.btn-new').addEventListener('click',function(){
-    
-    newGame();
-    
-})
+document.querySelector('.btn-new').addEventListener('click',newGame);
 
 function newGame() {
     scores = [0,0];
@@ -75,6 +73,10 @@ function newGame() {
     document.getElementById('score-1').textContent = '0';
     document.getElementById('current-0').textContent = '0';
     document.getElementById('current-1').textContent = '0';
+    
+    document.getElementById('name-0').textContent = 'Player 1';
+    document.getElementById('name-1').textContent = 'Player 2';
     document.querySelector('.player-' + activePlayer).classList.remove('player-winner');
     document.querySelector('.player-' + activePlayer).classList.add('player-active');
+    
 }
